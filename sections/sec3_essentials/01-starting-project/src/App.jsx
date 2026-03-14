@@ -1,12 +1,8 @@
-// @ts-ignore
-import reactImage from "./assets/react-core-concepts.png";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+
 import { CORE_CONCEPTS } from "./data";
 
-const reactDescriptions = ["Fundamentals", "Crucial", "Core"];
-// @ts-ignore
-function genRandomInt(max) {
-	return Math.floor(Math.random() * (max + 1));
-}
 function App() {
 	return (
 		<>
@@ -16,55 +12,7 @@ function App() {
 	);
 }
 // Components
-function Header() {
-	var description = reactDescriptions[genRandomInt(2)];
-	return (
-		<header>
-			<img src={reactImage} alt="Stylized atom" />
-			<h1>React Essentials</h1>
-			<p>
-				{description} React concepts you will need for almost any app you are
-				going to build!
-			</p>
-		</header>
-	);
-}
-function Main() {
-	return (
-		<main>
-			<section id="core-concepts">
-				<h2>Core Concepts</h2>
-				<ul>
-					<CoreConcept
-						title={CORE_CONCEPTS[0].title}
-						description={CORE_CONCEPTS[0].description}
-						image={CORE_CONCEPTS[0].image}
-					/>
-					<CoreConcept {...CORE_CONCEPTS[1]} />
 
-					<CoreConcept {...CORE_CONCEPTS[2]} />
-
-					<CoreConcept {...CORE_CONCEPTS[3]} />
-				</ul>
-			</section>
-		</main>
-	);
-}
-// Using object destructing
-//@ts-ignore
-function CoreConcept({
-	image,
-	title,
-	description = "Core Concept Description", // default value
-}) {
-	return (
-		<li>
-			<img src={image} alt={title} />
-			<h3>{title}</h3>
-			<p>{description}</p>
-		</li>
-	);
-}
 // Using props
 // function CoreConcept(props) {
 // 	return (
