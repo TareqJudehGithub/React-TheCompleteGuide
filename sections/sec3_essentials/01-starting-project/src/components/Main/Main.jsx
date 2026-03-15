@@ -1,11 +1,33 @@
+import { useState } from "react";
+
 import CoreConcept from "../CoreConcepts/CoreConcepts";
-import { CORE_CONCEPTS } from "../../data";
-import "./Main.css";
 import TabButton from "../CoreConcepts/TabButton";
+import { CORE_CONCEPTS, EXAMPLES } from "../../data";
+import "./Main.css";
+
 function Main() {
+	const [selectedTopic, setSelectedTopic] = useState("");
 	// @ts-expect-error
 	function handleSelect(selectedButton) {
-		console.log(selectedButton);
+		setSelectedTopic(selectedButton);
+		console.log(selectedTopic);
+	}
+	let tabContent = <p>Please select a topic</p>;
+	if (selectedTopic) {
+		tabContent = (
+			<div id="tab-content">
+				{/* @ts-expect-error */}
+				<h3>{EXAMPLES[selectedTopic].title}</h3>
+
+				{/* @ts-expect-error */}
+				<p>{EXAMPLES[selectedTopic].description}</p>
+
+				<pre>
+					{/* @ts-expect-error */}
+					<code>{EXAMPLES[selectedTopic].code}</code>
+				</pre>
+			</div>
+		);
 	}
 	return (
 		<main>
@@ -28,13 +50,33 @@ function Main() {
 					<TabButton onSelect={() => handleSelect("components")}>
 						Components
 					</TabButton>
-					<TabButton onSelect={() => handleSelect("JSX")}>JSX</TabButton>
-					<TabButton onSelect={() => handleSelect("Props")}>Props</TabButton>
-					<TabButton onSelect={() => handleSelect("State")}>State</TabButton>
+					<TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+					<TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+					<TabButton onSelect={() => handleSelect("state")}>State</TabButton>
 				</menu>
+				{tabContent}
+				{/* 
+				ternary operator
+			
+				 {!selectedTopic ? (
+					<p>Please select a topic</p>
+				) : (
+					<div id="tab-content">
+						 @ts-expect-error 
+						<h3>{EXAMPLES[selectedTopic].title}</h3>
+
+						 @ts-expect-error 
+						<p>{EXAMPLES[selectedTopic].description}</p>
+
+						<pre>
+							 @ts-expect-error 
+							<code>{EXAMPLES[selectedTopic].code}</code>
+						</pre>
+					</div>
+				)} 
+				 */}
 			</section>
 		</main>
 	);
 }
-
 export default Main;
