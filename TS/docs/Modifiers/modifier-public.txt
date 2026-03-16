@@ -1,0 +1,33 @@
+public
+ - public modifier is a TS exclusive and it does not exist in JS.
+ - public can be used on properties or even methods.
+ - public modifier grants access to the given property/method from 
+   outside its class.
+
+
+
+class Player {
+	// Properties
+	private _id: string;
+	public readonly first: string;
+	public readonly last: string;
+	public score: number = 0;
+
+	constructor(id: string, first: string, last: string, score: number) {
+		this._id = id;
+		this.first = first;
+		this.last = last;
+		this.score = score;
+  }
+  
+  // methods
+  public playerDetails(): string {
+    return `Name: ${this.first} ${this.last}\nScore: ${this.score}`
+  }
+ 
+
+}
+
+const elton = new Player("001", "Elton", "Steel", 0);
+console.log(elton.first, elton.last, elton.score);
+console.log(elton.playerDetails());

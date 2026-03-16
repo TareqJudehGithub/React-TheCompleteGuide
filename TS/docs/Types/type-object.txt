@@ -1,0 +1,61 @@
+Type Object
+  - TS creates annotations that describe the shape of an object.
+  
+
+export interface Core {
+	image: string;
+	title: string;
+	description: string;
+}
+
+In this example, we are sitting type object to CORE_CONCEPTS, an array of objects.
+  export const CORE_CONCEPTS: Core[] = [
+    {
+      image: componentsImg,
+      title: "Components",
+      description:
+        "The core UI building block - compose the user interface by combining multiple components.",
+    },
+    {
+      image: jsxImg,
+      title: "JSX",
+      description:
+        "Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.",
+    }
+  ]
+
+
+ - Here an example of object of objects
+  
+  1. first we set the types/interfaces
+    export interface InnerObj {
+      title: string;
+      description: string;
+      code: string;
+    }
+    export interface OuterObj {
+      [key: string]: InnerObj;
+    }
+  
+  2. Next, we set those types to the target object it self:
+       const EXAMPLES: OuterObj = {
+        components: {
+          title: "Components",
+          description:
+            "Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.",
+          code: `
+            function Welcome() {
+              return <h1>Hello, World!</h1>;
+            }`,
+              },
+              jsx: {
+                title: "JSX",
+                description:
+                  "JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).",
+                code: `
+            <div>
+              <h1>Welcome {userName}</h1>
+              <p>Time to learn React!</p>
+            </div>`,
+              }
+      }

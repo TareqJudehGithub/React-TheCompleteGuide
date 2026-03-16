@@ -1,0 +1,21 @@
+Type Enums
+ - Another exclusive  type to TS.
+ - Enums allows us to define a set of named constants.
+ - TS assigns numeric values for enum items starting at 0
+
+ enum OrderStatus {
+  PENDING,              // numeric value = 0
+  PROCESSING,           // numeric value = 1
+  SHIPPED,              // numeric value = 2
+  DELIVERED             // numeric value = 3
+ }
+
+ We can change enum items numeric values by manually reassigning them.
+
+
+ enum OrderStatus {
+  PENDING = 10,              
+  PROCESSING = 20,           
+  SHIPPED = 30,              
+  DELIVERED = 40             
+ }

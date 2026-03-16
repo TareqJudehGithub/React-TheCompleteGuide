@@ -1,0 +1,11 @@
+useState and TS
+ - useState is a generic function.
+ - For the case of arrays, TS does not infer their type automatically, so we have 
+   to 'set' a type.   
+ - we set a type for useState function using angel brackets <>
+    useState<string>
+ 
+    
+
+
+    

@@ -1,0 +1,8 @@
+Union Types
+ - Union types allows us to give a value a few different possible types.
+ - If the eventual value's type is included, TS will be happy.
+ - We can create a union type by using the single | (pipe character) to
+   separate the types we want to include. 
+
+  let age: number | string = 45;
+  age = "45";   

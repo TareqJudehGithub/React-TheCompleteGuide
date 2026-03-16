@@ -1,0 +1,14 @@
+Type Assertion  "!"
+
+ DOM
+  - use an exclamation mark '!' at the end of an element declaration to surpass 'null'
+  - Only use '!' when u're sure the value is not a null.
+    const btn = document.getElementById("myBtn")!;
+    btn.style.backgroundColor = "red";
+
+Type Assertions   
+  - By passing .value TS error
+   - In order to do that, we use the 'as' word followed by the element HTML type
+      const userInput = document.getElementById("todo-input")! as HTMLInputElement;
+      console.log(userInput.value); 
+

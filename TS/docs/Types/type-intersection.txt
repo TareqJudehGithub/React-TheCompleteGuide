@@ -1,0 +1,2 @@
+Type intersection
+ - Combining more than one type

@@ -1,0 +1,7 @@
+HTMLFormElement
+  - Used as an identifier for the event parameter of the handleSubmit function, so to
+    provide all of the event parameter properties.
+
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+    }

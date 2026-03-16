@@ -1,0 +1,14 @@
+TypeScript (TS)
+ 
+  What is TypeScript?
+   - TypeScript is a programming language and a superset of JavaScript that adds 
+     optional static typing (static checking).
+   - TS is developed by Microsoft (MS) that is based on JS.
+   - TS is a static type system.
+   - Static checking is the process of detecting errors in our code before run-time.
+   - TS Only exists in Development. TS is compiled to JS.
+   
+   - Using TS benefits:
+    - Helps us find errors in our code, before run-time (code running in the browser).
+    - Analyzes our code as we type.
+

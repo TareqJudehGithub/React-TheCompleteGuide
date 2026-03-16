@@ -1,0 +1,20 @@
+type Discriminated Union
+
+ A common pattern in TS involves creating a literal property that is common 
+ across multiple types.
+ We can then narrow the type using that literal property.
+
+ Discriminated union types only applies to Types, and not interfaces.
+
+    type WarningBoxProps = {
+      mode: "warning";
+      severity?: "low" | "medium" | "high";
+      children: ReactNode;
+    };
+    type HintBoxProps = {
+      mode: "hint";
+      children: ReactNode;
+    };
+    type InfoBoxProps = WarningBoxProps | HintBoxProps;
+
+    

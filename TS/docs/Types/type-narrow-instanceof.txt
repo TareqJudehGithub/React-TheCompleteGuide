@@ -1,0 +1,5 @@
+Type instanceof
+ - instanceof is a JS operator that allows us to check if one thing is an instance
+   of another.
+    console.log([1, 2, 3] instance of Array);   // true
+    console.log([1, 2, 3] instance of string);   // false

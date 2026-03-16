@@ -1,0 +1,42 @@
+Type interface
+ 
+ - interface (with a small i), is very similar to type alias.
+ - interfaces allows us to describe the shape of objects, and ONLY objects.
+ - It is a convention to use semi colon; between interface members.
+ - By the way, the process of defining an interface or a type for objects, props for 
+    example is called out sourcing.
+    
+ - syntax:
+  interface Person {
+    name: string,
+    age: number
+  }
+
+ - For best practices, keep ur interfaces in a separate file (models). Doing that
+   can prevent code duplication and difficult interface maintenance and editing.
+ - Lets assume we have a ShoppingList and a ShoppingItem components, and both these
+   components use an interface called ShoppingItem:
+
+    - models  (this is a folder)
+      - shopping.model.ts
+
+        Inside shopping.model.ts,  we create the proper interface
+          export interface ShoppingItem {
+            id: number;
+            itemName: string;
+            itemDescription: string;
+            itemPrice: number;
+            itemQty: number;
+          }
+ - Don't forget to 'export' the interface!
+ - Now, we can safely import ShoppingItem interface to both ShoppingList and to 
+   ShoppingItem components.
+   import type {ShoppingItem} from "filepath"
+
+ - It is important to use 'as' keyword if imports name will conflict with a component, 
+   like the case here with ShoppingItem.
+    import type {ShoppingItem as ShopItem} from "filepath"
+  
+  
+
+  

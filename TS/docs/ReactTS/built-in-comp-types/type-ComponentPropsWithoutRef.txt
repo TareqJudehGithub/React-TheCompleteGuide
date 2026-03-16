@@ -1,0 +1,32 @@
+ComponentPropsWithoutRef<>
+  - A utility type in React with TypeScript that extracts the props of a component 
+    or an HTML element, excluding the ref prop.
+  - ComponentPropsWithoutRef this type can be used to get hold of the default props 
+    that are accepted by one of the built-in elements.  
+  - This type is particularly useful when creating custom components that wrap native 
+    HTML elements or other React components, and you want to inherit all their standard 
+    props but handle the ref prop separately (or not at all within that specific 
+    component).
+  - To get the props of a native HTML element (e.g., div, button, input), you pass 
+    the element's tag name as a string literal.
+        ComponentPropsWithoutRef<"input">
+
+    import type { ComponentPropsWithoutRef, JSX } from "react";
+
+    export default function Input({ id, label, ...props }: InputProps): JSX.Element {
+      return (
+        <form>
+          <label htmlFor={id}>{label}</label>
+          <input {...props} id={id} />
+        </form>
+      );
+    }
+
+    type InputProps = {
+      id: string;
+      label: string;
+    } & ComponentPropsWithoutRef<"input">;
+
+  
+  - ComponentPropsWithoutRef can also give you a props object for a custom component.  
+  

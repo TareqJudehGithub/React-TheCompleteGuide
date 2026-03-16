@@ -1,0 +1,25 @@
+Type ReactNode
+ - Is the type used for React special type children.
+ - We can also use the PropsWithChildren type from React.
+ - ReactNode means, children should get some JSX code or some raw text that can 
+   be output.
+
+ - We import ReactNode from "react" as a type, just like the JSX type.
+	import type {ReactNode, JSX} from "react";
+	export default function CourseGoal(props: CourseGoalProps): JSX.Element {
+		return (
+			<article>
+				<div>
+					<h2>{ props.title}</h2>
+					<p>{ props.children}</p>
+				</div>
+				<button>Delete</button>
+			</article>
+		);
+	}
+
+	interface CourseGoalProps {
+		title: string;
+		children: ReactNode;
+		
+	};

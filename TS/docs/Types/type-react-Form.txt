@@ -1,0 +1,10 @@
+import React, { JSX } from "react";
+
+function ShoppingListForm(): JSX.Element {
+
+  // Handles
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+  }
+
+}

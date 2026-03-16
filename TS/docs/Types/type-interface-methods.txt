@@ -1,0 +1,10 @@
+Methods in interfaces
+ - We only use : type and also => type for returns, we don't use {}, as these
+   are used when declaring the function it self.
+
+interface Product {
+	name: string;
+	price: number;
+	applyDiscount(discount: number): number;
+}
+

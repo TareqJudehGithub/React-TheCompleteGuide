@@ -1,0 +1,5 @@
+Type never 
+- A function with type never is not expected to return anything.
+- Unlike void, Never is NOT a value, it is but to instruct JS not to expect 
+  any return value from a function.
+  

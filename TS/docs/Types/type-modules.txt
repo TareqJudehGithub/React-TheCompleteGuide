@@ -1,0 +1,34 @@
+
+imports and exports in TS
+
+Include 
+ 
+Named export
+  export function functionName(){};
+  import {functionName} from "./filepath";
+
+
+Default export
+  export Default class ClassName {};
+  import ClassName from "./filepath";
+
+type import
+
+    export interface Person {
+    username: string;
+    email: string;
+  }
+
+    export type Color = "red" | "green" | "blue";
+
+    import type {Person} from "./filepath"
+    import type {Color} from "./filepath"
+
+
+
+
+
+
+ 
+
+

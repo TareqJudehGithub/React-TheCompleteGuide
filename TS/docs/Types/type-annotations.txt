@@ -1,0 +1,9 @@
+TS Type Annotations
+ - TS is a static type, which means TS uses static types annotating variables when 
+   defined.
+ - The most common variable Annotations in TS are string, number, and boolean.
+
+  Example:
+  let emailAddress: string = "John";
+  let age: number = 25;
+  let isActive: boolean = true;

@@ -1,0 +1,13 @@
+Generic Types
+
+	list, is an array, and can be of any data type,  or can also be undefined, to
+	prevent errors
+  <T> means generic type (T for type). T could be any data type we can specify.
+
+export default function GenericList() {
+	return "UI";
+}
+
+interface GenericListPorps<T> {
+	list: T[] | undefined;
+}

@@ -1,0 +1,6 @@
+HTMLInputElement
+ Used as an identifier for useRef, to unlock access to all useRef properties.
+  
+  const summary = useRef<HTMLInputElement>(null);
+  const enteredGoal = goal.current!.value;
+   *** Without HTMLInputElement, we would not be able to access property 'value'

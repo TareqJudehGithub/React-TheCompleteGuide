@@ -1,0 +1,37 @@
+Compiling TS code into JS
+After finishing writing our code in the .ts file (making sure we have no errors), we now
+can compile that .ts file in the Terminal using the tsc command:
+  $ tsc file-name.ts
+This process generates a compiled .js file with the same .ts file name.
+
+- Running $ tsc without specifying a filename, will compile all .ts files in that 
+  directory.
+
+tsconfig.json file
+ - The file were all TS configurations and setting are kept
+ - To create tsconfig.json, run:
+   $ tsc --init
+ - Next, we create all needed .ts files.
+ - TS files ends with extension .ts
+ - After finishing writing code in the .ts file, making sure we seeing no errors, we now 
+   need to start compiling it to a JavaScript (JS) format, and for that run in the same 
+   directory the .ts files in:
+   $ tsc filename.ts
+
+
+--watch attribute
+ - --watch, dynamically watches any changes on the targeted .ts file and compiles it.
+ - we can write it as --watch or -w
+   $ tsc --watch filename.ts
+ - TS starts 'watching' the target file for any changes, errors, and reports back in 
+   the Terminal.
+
+
+- Specify files to be compiled
+ - For that we add: "files": ["filename1.ts", "filename2.ts"] right after 
+   "compilerOptions" closing curly braces.
+   
+	
+
+
+

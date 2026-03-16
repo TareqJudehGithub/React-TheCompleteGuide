@@ -1,0 +1,22 @@
+protected modifier
+
+ - 'protected' modifier members are available in the classes they were declared in, and
+    in any other INHERITED class.
+
+
+      class Player {
+        // Properties
+        private _id: string;
+        public readonly first: string;
+        public readonly last: string;
+        public score: number = 0;
+        protected _salary!: number;
+      }
+
+      class adminPlayer extends Player{
+        public isAdmin: boolean = true;
+        maxScore() {
+          this._salary = 999999;    
+        }
+      }
+        

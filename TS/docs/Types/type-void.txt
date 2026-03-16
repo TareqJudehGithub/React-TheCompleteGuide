@@ -1,0 +1,7 @@
+Type void
+ - Void in JS is a value.
+ - A void function, is a function that returns no specific data type. An 
+   example for void functions are the ones returning a console.log().
+   
+ - We could annotate these with : void, or not annotate at all. Both cases are fine.
+ 

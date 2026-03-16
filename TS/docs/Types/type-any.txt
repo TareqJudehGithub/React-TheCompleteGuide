@@ -1,0 +1,8 @@
+Type any
+ - Does not refer to any type. Not recommended.
+ - Try and avoid using 'type any', always specify your variable types even
+   if  that variable was not initialized at declaration (implicit any).
+
+
+let favMovie: "string";   // Right
+let favMovie;             // Wrong

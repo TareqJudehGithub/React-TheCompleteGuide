@@ -1,0 +1,10 @@
+Type Array
+
+ - Type array annotation is exactly like C# array data type modifier
+
+    const friendsList: string[] = ["John", "Sarah", "Willie"];
+
+ - Any push rather than a string type with return an error.
+
+ - We could annotate arrays with any type, string, number, bool, or even objects.
+ 

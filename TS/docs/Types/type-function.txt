@@ -1,0 +1,34 @@
+Type Function
+ - In functions, we annotate the parameters in the function header. Doing 
+   so will strick the user to enter the type annotated only in the parameter.
+ - Also, TS will throw an error if we provided too many or too few arguments
+   that the ones declared in the parameter area.  
+
+    function square(num: number) {
+      return num * num;
+    }
+
+    console.log(square(3));
+
+
+ - return type
+  - We should annotate (specify) a return type right after the parameter parentheses.
+  - By doing the step above, we force also the function return type, because in case 
+    we did not include a return keyword, that function will return a void type instead.
+
+    function greetUser(userName: string): string {
+      return `Hello, ${userName}`;
+    }
+    greetUser("john-45");
+
+
+
+function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const enteredGoal = goal.current!.value;
+    const enteredSummary = summary.current!.value;
+    props.onAddGoal(enteredGoal, enteredSummary);
+	}
+interface NewGoalProps {
+  onAddGoal: (goal: string, summary: string) => void;
+}

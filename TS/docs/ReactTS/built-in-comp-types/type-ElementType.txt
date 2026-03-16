@@ -1,0 +1,15 @@
+ElementType
+ - ElementType type means, the value should be a valid identifier of a component, or 
+   the component it self, not the JSX code, that would be ReactNode or JSX.Element. 
+ - ElementType wants the name of a component.
+ - Used in polymorphic components creation:
+      import type { ElementType, JSX } from "react";
+
+      export default function Container({ as }: ContainerProps): JSX.Element {
+        const Component = as;
+        return <Component />;
+      }
+
+      type ContainerProps = {
+        as: ElementType;
+      };

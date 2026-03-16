@@ -1,0 +1,12 @@
+Tuples
+ - Tuples are special array type exclusive to TS (they don't exist in JS).
+ - Tuples are arrays of FIXED lengths and ordered with specific types, like
+   super rigid arrays.
+ - In tuples, the length, the type, and also the order they all matter.  
+
+ - An array of fixed numbers (3);
+    const color: [number, number, number] = [255, 0, 255];
+ - We can still push or pop an item (not the whole length), and that is 
+   considered a limitation with tuples.
+
+

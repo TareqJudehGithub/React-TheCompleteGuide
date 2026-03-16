@@ -1,0 +1,11 @@
+
+
+Type alias vs type interface
+
+Alias                           interface          
+Can describe any sort of type                  Only describes the shape of an OBJECT. 
+no                              yes            Reopen and Add on
+uses type union                 uses extends   Inheritance
+
+
+Conclusion:  interfaces are more common and more used to describe objects.

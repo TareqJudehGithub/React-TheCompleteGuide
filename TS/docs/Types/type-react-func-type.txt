@@ -1,0 +1,34 @@
+React and Type script
+
+ - It is best to install Vite for React TS. Look for type-react-vite.txt
+   for Vite installation.
+
+ function return type annotation
+  - Element return type. 
+
+    We use JSX.Element or React.ReactElement for both 
+    create-react-app and Vite projects
+     - Includes elements like div, h1, etc..
+     - Does not include primitive types.
+
+  - Do note that JSX is a type, so JSX needs to be coated with curly 
+    parentheses.
+
+      import { type JSX } from "react";
+
+      function Greeter(): JSX.Element {
+      return <h1>Greetings from Greeter component</h1>;
+      }
+      export default Greeter;
+
+
+      import React from "react";
+
+      function Greeter(): React.ReactElement {
+        return <h1>Greeting from Greeter component!</h1>;
+      }
+      export default Greeter;
+
+  - Type React.ReactNode
+   - This like type any, and TS expects any type: string, number, element..etc.
+

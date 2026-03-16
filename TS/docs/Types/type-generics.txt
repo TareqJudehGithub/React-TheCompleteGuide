@@ -1,0 +1,60 @@
+Generics
+ - What are generics?
+  - Generics are special syntax that allows us to define a reusable classes and 
+    functions that can work with multiple types.
+  - Generic types allows us to connect multiple types and have them work together.
+  - In this example, we provided an interface with a type between brackets as a TS 
+    type.
+    const numbers: Array<number> = [];
+
+
+  - This function below accepts an array, and return a random element from that array.
+      function getRandomElement<T>(list: T[]): T {
+        const randomIndex = Math.floor(Math.random() * list.length);
+        return list[randomIndex];
+      }  
+  - So we defined a type of the getRandomElement function, and from that type we 
+    returned an output.
+  
+  - Ok, let's break that function syntax down:
+  <T>           <T> Is a naming convention for a generic type.
+                <T> Is a type parameter for the generic function  
+  (list: T[])   The parameter type (the input) of getRandomElement generic function.
+  : T           The return type. We can specify any type we wish.
+
+
+  When calling (reusing) the function, consider the following:
+   - We don't use the keyword 'function' of course.
+   - We don't have to specify the generic function parameter type <>, because
+     there's a relationship between the argument key and the returned value.
+   
+   getRandomElement([1, 2, 3, 4, 5]);
+   getRandomElement(["john", "sarah", "william"]);
+   - And that's all we need to type when calling the function.
+
+  - In some cases, we have to specify the generic type, like when working with DOM.
+      const btn = document.querySelector<HTMLButtonElement>("button");
+
+  - When working with React, add a ',' to the type parameter.
+  const doSomething = <T,>(param: <T>): T => {
+    // code
+  }
+  const arrowFun = <T,>(x: T): T => x;
+
+  - New example, we define the type:
+        type DataStorage<T> = {
+        storage: T[];
+        add: (data: T) => void;  
+      };
+
+   - Then, we declare a variable of type DataStorage with a string for example, we so we
+     pass <string> as a value for the <T> placeholder in the type definition. <string> Is
+     the value of DataStorage generic type definition.
+
+        const textStorage: DataStorage<string> = {
+         storage: ["Box Files", "Pencils", "Stablers"],
+         add(data) {console.log(data)}
+        }
+        
+
+

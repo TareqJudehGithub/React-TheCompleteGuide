@@ -1,0 +1,13 @@
+The 'in' operator
+
+ - 'in' operator checks if a property exists in an object or not and returns
+    a boolean.
+
+ const Person = {
+  name: "John Smith,
+  age: 45
+ }
+
+ console.log("name" in Person)   // true
+ console.log("email" in Person)   // false
+

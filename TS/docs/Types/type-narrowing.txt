@@ -1,0 +1,19 @@
+Type Narrowing
+ - We use typeof Type Guards to 'type check' before working with a value.
+ - Since unions (for example: string | number) allow multiple types for a value
+   we can first check what came through before working with it.
+ -  typeof is used for primitive types.
+      function triple(value: number | string) {
+        if (typeof value === "string") {
+          console.log(`${value} is a string.`)
+        }
+      }
+ - always coat the type value on the right side of the comparison with double ""
+
+ - Truthiness Guard (truthiness check)
+  - To check if a value exists using a conditional statement.
+  
+    const value;
+    if (value) {
+      do something based on the fact value is not null.
+    }

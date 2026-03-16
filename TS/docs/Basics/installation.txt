@@ -1,0 +1,9 @@
+Installing TS
+ 
+ - Per project
+  $ npm install typescript --save-dev
+ - Global installation
+  $ npm install -g typescript
+
+ - Check if TS is installed:
+  $ npm tsc -v

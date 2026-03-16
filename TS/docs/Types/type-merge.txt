@@ -1,0 +1,33 @@
+Merging two types
+ - ComponentPropsWithoutRef<>
+    - Merging or adding ComponentPropsWithoutRef<"input"> to an existing type/interface, gives
+      us an object that contains all the default props of the standard built-in elements of the 
+      selected element. In our case 'input.
+ 
+      - We first need to import type ComponentPropsWithoutRef from "react".
+  type InputProps = {
+    id: string;
+    label: string;
+    type: "text" | "number" | "email" | "password" | "submit";
+    
+  } & ComponentPropsWithoutRef<"input">;
+
+  So in the App component, we can add any 'supported' attribute by 'input'.
+
+    import type { ComponentPropsWithoutRef, JSX, ReactNode } from "react";
+
+      // Custom components
+    import Main from "./components/Main/Main";
+    import Input from "./components/Input";
+
+      function App() {
+        return (
+          <Main>
+            <Input type="text" id="name" label="name" />
+            <Input type="number" id="age" label="age" />
+          </Main>
+        );
+      }
+
+      export default App;
+

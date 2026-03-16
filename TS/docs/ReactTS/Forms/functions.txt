@@ -1,0 +1,13 @@
+
+Functions with params
+
+function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const enteredGoal = goal.current!.value;
+    const enteredSummary = summary.current!.value;
+    props.onAddGoal(enteredGoal, enteredSummary);
+	}
+
+interface NewGoalProps {
+  onAddGoal: (goal: string, summary: string) => void;
+}

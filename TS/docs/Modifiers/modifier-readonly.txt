@@ -1,0 +1,15 @@
+readonly modifier
+ - A modifier that strict users from modifying a primitive value.
+ - readonly is TS exclusive, it does not exist in JS.
+
+    type User = {
+      readonly id: number;
+      userName: string;
+    };
+
+    const user: User = {
+      id: 1234,
+      userName: "john45.smith",
+    };
+
+    // user.id = 324564;    Error cannot modify a readonly variable.

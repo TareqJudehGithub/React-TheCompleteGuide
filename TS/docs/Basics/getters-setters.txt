@@ -1,0 +1,31 @@
+
+Getters and setters
+ - The main purpose of getters and setters is to encapsulate and protect private 
+   members from being exposed and accessed outside their class.
+
+
+class Player {
+	// Properties
+	private _id: string;
+	public readonly first: string;
+	public readonly last: string;
+	public score: number = 0;
+	protected _salary!: number;
+
+	// getters
+	get fullName(): string {
+		return `${this.first} ${this.last}`;
+	}
+	get salary(): number {
+		return this._salary;
+	}
+
+	// setters
+	set salary(newSalary: number) {
+		if (newSalary < 0) {
+			throw new Error("Salary cannot be negative");
+		}
+		this._salary = newSalary;
+	}
+
+}

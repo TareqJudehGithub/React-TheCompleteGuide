@@ -1,0 +1,16 @@
+Generics default value
+ - In the generic function brackets <> where we specify the param type, we could include
+   = type  as a default value.
+
+    function makeList<T = string>(): T[] {
+      return [];
+    }
+ - So now when we instantiate a new obj from that function, we don't have to include
+   a <type> in case we are instantiating from the same type.
+
+const strOfArr = makeList();
+
+strOfArr.push("First Item");
+console.log(strOfArr.length);
+
+

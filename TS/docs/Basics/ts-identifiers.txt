@@ -1,0 +1,23 @@
+TS Identifiers
+  In TypeScript, an identifier is a name given to various elements within your code, such 
+  as:
+  Variables: let myVariable: string;
+  Functions: function calculateSum(a: number, b: number): number;
+  Classes: class MyClass { /* ... */ }
+  Interfaces: interface User { /* ... */ }
+  Types: type Age = number;
+  Properties and methods within classes or interfaces: class Greeter { greeting: string; 
+  greet(): string; }
+  Rules for naming identifiers in TypeScript (similar to JavaScript):
+  Start with a letter, underscore (_), or dollar sign ($): Identifiers cannot begin with 
+  a number.
+  Valid: name, _id, $value
+  Invalid: 1stName, 2age
+  Can contain letters, numbers, underscores (_), or dollar signs ($):
+  Valid: userName, product_id, total$Amount
+  Invalid: user-name, item#count
+  Cannot be a reserved keyword: Words like if, else, for, while, class, function, 
+  return, let, const, var, etc., cannot be used as identifiers because they have special 
+  meaning in TypeScript.
+  Case-sensitive: myVariable is different from MyVariable.
+  No spaces: Identifiers cannot contain spaces.

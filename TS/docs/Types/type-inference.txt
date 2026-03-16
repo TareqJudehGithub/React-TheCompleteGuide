@@ -1,0 +1,18 @@
+TS Inference
+  - TS can detect a variable type based on it's value assigned, and returns 
+    errors in case we changed that variable value to another type.
+
+    let isFunny = false;
+    isFunny = true;
+    isFunny = "false";
+    
+  - In case we initialized a variable when declared, there's no need to annotate it,
+    because TS will infers it's type automatically.
+
+    cont number = 0;
+
+  - In case of a function defined without annotating it's return type and without 
+    including a return keyword, TS will be expecting a 'void' return type here.
+  - In case we did not annotate a return type, but we did include the return keyword,
+    TS will infers and set a return type to that function based on it's return value.
+  - TS cannot infer an array, so we have to set that one's type manually.

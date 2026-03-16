@@ -1,0 +1,19 @@
+
+
+handling functions with TS in React
+
+
+ In the App component
+
+    function handleDeleteGoal(id: number) {
+      setGoals((prevGoals) => prevGoals.filter((item) => item.id !== id));
+    }
+
+  In the designated component we are trying to pass handleDeleteGoal function to:
+
+    interface CourseGoalProps {
+      id: number;
+      title: string;
+      children: ReactNode;
+      onDelete: (id: number) => void;
+    }

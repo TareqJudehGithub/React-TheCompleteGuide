@@ -1,0 +1,6 @@
+We provide the '=' following the type 
+
+ function twoFer(personName: string = "you"): string {
+  return `one for ${personName}, one for me`;
+}
+ - "you" is the default parameter.
