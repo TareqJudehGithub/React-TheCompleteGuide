@@ -7,11 +7,12 @@ import "./Main.css";
 
 function Main() {
 	const [selectedTopic, setSelectedTopic] = useState("");
+
 	// @ts-expect-error
 	function handleSelect(selectedButton) {
 		setSelectedTopic(selectedButton);
-		console.log(selectedTopic);
 	}
+
 	let tabContent = <p>Please select a topic</p>;
 	if (selectedTopic) {
 		tabContent = (
@@ -34,25 +35,48 @@ function Main() {
 			<section id="core-concepts">
 				<h2>Core Concepts</h2>
 				<ul>
-					<CoreConcept
-						title={CORE_CONCEPTS[0].title}
-						description={CORE_CONCEPTS[0].description}
-						image={CORE_CONCEPTS[0].image}
-					/>
-					<CoreConcept {...CORE_CONCEPTS[1]} />
-					<CoreConcept {...CORE_CONCEPTS[2]} />
-					<CoreConcept {...CORE_CONCEPTS[3]} />
+					{CORE_CONCEPTS.map((conceptItem) => (
+						<CoreConcept key={conceptItem.title} {...conceptItem} />
+					))}
+
+					{/* Or: */}
+					{/* {CORE_CONCEPTS.map((conceptItem) => (
+						<CoreConcept
+							key={conceptItem.title}
+							image={conceptItem.image}
+							title={conceptItem.title}
+							description={conceptItem.description}
+						/>
+					))} */}
 				</ul>
 			</section>
 			<section id="examples">
 				<h2>Examples</h2>
 				<menu>
-					<TabButton onSelect={() => handleSelect("components")}>
+					<TabButton
+						onSelect={() => handleSelect("components")}
+						isSelected={selectedTopic === "components"}
+					>
 						Components
 					</TabButton>
-					<TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-					<TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-					<TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+					<TabButton
+						onSelect={() => handleSelect("jsx")}
+						isSelected={selectedTopic === "jsx"}
+					>
+						JSX
+					</TabButton>
+					<TabButton
+						onSelect={() => handleSelect("props")}
+						isSelected={selectedTopic === "props"}
+					>
+						Props
+					</TabButton>
+					<TabButton
+						onSelect={() => handleSelect("state")}
+						isSelected={selectedTopic === "state"}
+					>
+						State
+					</TabButton>
 				</menu>
 				{tabContent}
 				{/* 
