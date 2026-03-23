@@ -5,13 +5,9 @@ import "./Main.css";
 function Main() {
 	return (
 		<main>
-			<section id="core-concepts">
-				<CoreConcepts />
-			</section>
+			<CoreConcepts />
 
-			<section id="examples">
-				<Examples />
-			</section>
+			<Examples />
 		</main>
 	);
 }

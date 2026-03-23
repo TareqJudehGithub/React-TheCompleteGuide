@@ -1,5 +1,8 @@
 import { useState } from "react";
+
+import Section from "./Section";
 import TabButton from "./TabButton";
+import Tab from "./Tab";
 import { EXAMPLES } from "../../data";
 
 export default function Examples() {
@@ -28,55 +31,63 @@ export default function Examples() {
 		);
 	}
 	return (
-		<>
-			<h2>Examples</h2>
-			<menu>
-				<TabButton
-					onSelect={() => handleSelect("components")}
-					isSelected={selectedTopic === "components"}
-				>
-					Components
-				</TabButton>
-				<TabButton
-					onSelect={() => handleSelect("jsx")}
-					isSelected={selectedTopic === "jsx"}
-				>
-					JSX
-				</TabButton>
-				<TabButton
-					onSelect={() => handleSelect("props")}
-					isSelected={selectedTopic === "props"}
-				>
-					Props
-				</TabButton>
-				<TabButton
-					onSelect={() => handleSelect("state")}
-					isSelected={selectedTopic === "state"}
-				>
-					State
-				</TabButton>
-			</menu>
-			{tabContent}
-			{/* 
-            ternary operator
-          
-             {!selectedTopic ? (
-              <p>Please select a topic</p>
-            ) : (
-              <div id="tab-content">
-                 @ts-expect-error 
-                <h3>{EXAMPLES[selectedTopic].title}</h3>
-    
-                 @ts-expect-error 
-                <p>{EXAMPLES[selectedTopic].description}</p>
-    
-                <pre>
-                   @ts-expect-error 
-                  <code>{EXAMPLES[selectedTopic].code}</code>
-                </pre>
-              </div>
-            )} 
-             */}
-		</>
+		<Section id="examples" title="Examples">
+			<Tab
+				// ButtonsContainer="menu"
+				buttons={
+					<>
+						<TabButton
+							onSelect={() => handleSelect("components")}
+							isSelected={selectedTopic === "components"}
+						>
+							Components
+						</TabButton>
+						<TabButton
+							onSelect={() => handleSelect("jsx")}
+							isSelected={selectedTopic === "jsx"}
+						>
+							JSX
+						</TabButton>
+						<TabButton
+							onSelect={() => handleSelect("props")}
+							isSelected={selectedTopic === "props"}
+						>
+							Props
+						</TabButton>
+						<TabButton
+							onSelect={() => handleSelect("state")}
+							isSelected={selectedTopic === "state"}
+						>
+							State
+						</TabButton>
+					</>
+				}
+			>
+				{tabContent}
+			</Tab>
+		</Section>
 	);
+}
+
+{
+	/* 
+			ternary operator
+		
+			 {!selectedTopic ? (
+				<p>Please select a topic</p>
+			) : (
+				<div id="tab-content">
+					 @ts-expect-error 
+					<h3>{EXAMPLES[selectedTopic].title}</h3>
+
+					 @ts-expect-error 
+					<p>{EXAMPLES[selectedTopic].description}</p>
+
+					<pre>
+						 @ts-expect-error 
+						<code>{EXAMPLES[selectedTopic].code}</code>
+					</pre>
+				</div>
+			)} 
+			 */
 }
