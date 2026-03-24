@@ -2,8 +2,24 @@ Installing TS
  
  - Per project
   $ npm install typescript --save-dev
+
  - Global installation
   $ npm install -g typescript
+  OR
+  $ npx tsc
 
  - Check if TS is installed:
   $ npm tsc -v
+
+ - Uninstalling TS 
+  
+  - Globally
+    $ npm uninstall -g typescript
+
+  - Locally
+    $ npm uninstall typescript @types/node @types/react
+
+ 
+  - Upgrade/update TypeScript for a project (locally)
+    In the project root, run:
+      $ npm install --save-dev typescript@latest
