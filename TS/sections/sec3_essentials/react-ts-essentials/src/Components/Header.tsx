@@ -15,7 +15,6 @@ type HeaderProps = PropsWithChildren<{
 
 // Or
 // type HeaderProps = {
-//   title: string,
 //   image: {src: string, alt: string}
 //   children: ReactNode
 // };
