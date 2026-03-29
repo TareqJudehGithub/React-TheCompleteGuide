@@ -21,8 +21,6 @@ Type Function
     }
     greetUser("john-45");
 
-
-
 function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const enteredGoal = goal.current!.value;

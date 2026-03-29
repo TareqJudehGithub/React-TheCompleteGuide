@@ -1,3 +1,15 @@
+import  type { SubmitEvent } from "react";
+
+export default function NewGoal()
+{
+  function handleSubmit(e: SubmitEvent<HTMLFormElement>)
+  {
+    e.preventDefault();
+  }
+}
+
+// Deprecated 
+
 import React, { JSX } from "react";
 
 function ShoppingListForm(): JSX.Element {
