@@ -1,3 +1,6 @@
+// FormEvent is now deprecated now, use SubmitEvent instead. See type-HTMLFormElement.text
+   file for more details.
+	 
 Handling events in forms
 
 - We use type FormEvent for handleSubmit functions to set a type for the event parameter:  
