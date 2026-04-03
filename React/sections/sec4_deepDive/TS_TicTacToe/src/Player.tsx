@@ -1,6 +1,10 @@
 import { useState, type ChangeEvent } from "react";
 
-export default function Player({ initialState, symbol }: PlayerProps) {
+export default function Player({
+	initialState,
+	symbol,
+	isActive,
+}: PlayerProps) {
 	// State
 	const [playerName, setPlayerName] = useState<string>(initialState);
 	const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -18,7 +22,7 @@ export default function Player({ initialState, symbol }: PlayerProps) {
 	}
 
 	return (
-		<li>
+		<li className={isActive ? "active" : undefined}>
 			<span className="player">
 				{isEditing ? (
 					<input
@@ -43,4 +47,5 @@ export default function Player({ initialState, symbol }: PlayerProps) {
 type PlayerProps = {
 	initialState: string;
 	symbol: string;
+	isActive?: boolean;
 };

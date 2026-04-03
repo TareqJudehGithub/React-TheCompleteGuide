@@ -1,12 +1,14 @@
 import { useState } from "react";
 // @ts-expect-error
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol, isActive }) {
 	// States
 	const [playerName, setPlayerName] = useState(initialName);
 	const [isEditing, setIsEditing] = useState(false);
 
 	// handle functions
 	function handleEdit() {
+		// @ts-expect-error
+		setPlayerName((playerName) => (playerName = ""));
 		return setIsEditing((s) => !s);
 	}
 	// @ts-expect-error
@@ -14,12 +16,11 @@ export default function Player({ initialName, symbol }) {
 		setPlayerName(e.target.value);
 	}
 	return (
-		<li>
+		<li className={isActive ? "active" : undefined}>
 			<span className="player">
 				{isEditing ? (
 					<input
 						type="text"
-						placeholder="Edit name.."
 						value={playerName}
 						onChange={handleNameChange}
 						autoFocus

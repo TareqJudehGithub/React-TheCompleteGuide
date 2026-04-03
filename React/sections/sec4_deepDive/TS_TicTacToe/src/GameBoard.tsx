@@ -6,22 +6,24 @@ const initialGameBoard = [
 	[null, null, null],
 ];
 
-export default function GameBoard() {
+export default function GameBoard({
+	onSelectSquare,
+	activePlayer,
+}: GameBoardProps) {
 	// States
 	const [gameBoard, setGameBoard] =
 		useState<(null[] | string[])[]>(initialGameBoard);
 	// Handles
 	function handleSelectSquare(rowIndex: number, playerIndex: number) {
+		// @ts-expect-error
 		setGameBoard((prevBoard) => {
-			// Remove the explicit type annotation; let TypeScript infer it
-			const updatedBoard = [
-				...prevBoard.map((innerArray) => [...innerArray]), // innerArray is now correctly typed as null[] | string[]
-			];
+			const updatedBoard = [...prevBoard.map((innerArray) => [...innerArray])];
 
-			updatedBoard[rowIndex][playerIndex] = "X";
+			updatedBoard[rowIndex][playerIndex] = activePlayer;
 
 			return updatedBoard;
 		});
+		onSelectSquare();
 	}
 	return (
 		<ol id="game-board">
@@ -43,3 +45,8 @@ export default function GameBoard() {
 		</ol>
 	);
 }
+
+type GameBoardProps = {
+	onSelectSquare: () => void;
+	activePlayer: string;
+};
