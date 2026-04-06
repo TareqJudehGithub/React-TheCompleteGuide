@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import Post from "../Post/Post";
-import NewPost from "../NewPost/NewPost";
 import Modal from "../Modal/Modal";
+import NewPost from "../NewPost/NewPost";
+import Post from "../Post/Post";
 
 // @ts-expect-error
 import styles from "./PostsList.module.css";
@@ -10,31 +10,43 @@ import styles from "./PostsList.module.css";
 // @ts-expect-error
 export default function PostsList({ onModalToggle, isVisible }) {
 	// States
-	const [body, setBody] = useState("");
-	const [author, setAuthor] = useState("");
+	const [posts, setPosts] = useState([]);
 
-	// Handles
-	function handleBodyChange(e) {
-		setBody(e.target.value);
-	}
-	function handleAuthorChange(e) {
-		setAuthor(e.target.value);
-	}
+	// Handlers
 
+	// add new post to the list of posts
+	// @ts-expect-error
+	function handleAddPost(newPost) {
+		// @ts-expect-error
+		setPosts((posts) => [newPost, ...posts]);
+	}
 	return (
 		<>
 			{isVisible && (
-				<Modal onToggleModal={onModalToggle}>
-					<NewPost
-						onBodyChange={handleBodyChange}
-						onAuthorChange={handleAuthorChange}
-					/>
+				<Modal>
+					<NewPost onCancel={onModalToggle} onAddPost={handleAddPost} />
 				</Modal>
 			)}
-			<ul className={styles.posts}>
-				<Post author={author} body={body} />
-				<Post author="Sarah Adams" body="I love programming!" />
-			</ul>
+			{posts.length > 0 && (
+				<ul className={styles.posts}>
+					{posts.map((post) => (
+						<Post
+							// @ts-expect-error
+							key={post.body}
+							// @ts-expect-error
+							author={post.author}
+							// @ts-expect-error
+							body={post.body}
+						/>
+					))}
+				</ul>
+			)}
+			{posts.length === 0 && (
+				<div style={{ textAlign: "center", color: "white" }}>
+					<h2>There are no posts yet.</h2>
+					<p>Start adding some!</p>
+				</div>
+			)}
 		</>
 	);
 }

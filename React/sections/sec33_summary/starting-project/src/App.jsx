@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import PostsList from "./Components/PostsList/PostsList";
 import Header from "./Components/Header/Header";
-import Modal from "./Components/Modal/Modal";
-import NewPost from "./Components/NewPost/NewPost";
 
 function App() {
 	// States
@@ -14,13 +12,16 @@ function App() {
 		console.log(isModalVisible);
 		setIsModalVisible((modal) => !modal);
 	}
+	function handleModal() {
+		return isModalVisible;
+	}
 	return (
 		<>
 			<Header onCreatePost={handleToggleModal} />
 			<main>
 				<PostsList
 					onModalToggle={handleToggleModal}
-					isVisible={isModalVisible}
+					isVisible={handleModal()}
 				/>
 			</main>
 		</>
